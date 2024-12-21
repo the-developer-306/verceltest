@@ -16,7 +16,7 @@
   status = 200
 
 [build.environment]
-  PYTHON_VERSION = "3.9"
+  PYTHON_VERSION = "3.10.6"
   PIP_NO_BINARY = ":all:"  # This ensures no binary wheels are used
   PIP_DEFAULT_TIMEOUT = "100"  # This sets the timeout for pip installs
   PIP_ONLY_BINARY = "numpy,scipy,pandas"  # This ensures these packages are installed from binary wheels if available
