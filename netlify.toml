@@ -1,0 +1,11 @@
+[build]
+  publish = "static"
+  command = "npm run build"
+
+[functions]
+  directory = "functions"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

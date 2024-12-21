@@ -1,0 +1,10 @@
+{
+  "name": "fake-review-detector",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "echo 'Netlify build'"
+  },
+  "dependencies": {
+    "@netlify/functions": "^0.10.0"
+  }
+}
