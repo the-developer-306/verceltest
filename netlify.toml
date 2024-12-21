@@ -1,11 +1,25 @@
 [build]
   publish = "static"
-  command = "npm run build"
+  command = "pip install -r functions/requirements.txt && npm run build"
 
 [functions]
   directory = "functions"
+
+[[plugins]]
+  package = "@netlify/plugin-inline-source"
+  [plugins.inputs]
+    files = ["functions/app.py"]
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+[build.environment]
+  PYTHON_VERSION = "3.8"
+  PIP_NO_BINARY = ":all:" # This ensures no binary wheels are used
+  PIP_DEFAULT_TIMEOUT = "100" # This sets the timeout for pip installs
+  PIP_ONLY_BINARY = "numpy,scipy,pandas" # This ensures these packages are installed from binary wheels if available
+
+[build.command]
+  command = "apt-get update && apt-get install -y build-essential clang && pip install -r functions/requirements.txt"
