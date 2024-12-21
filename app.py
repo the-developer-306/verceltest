@@ -10,7 +10,7 @@ import os
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer as SIA
 
 # Ensure that NLTK uses the local nltk_data folder
-nltk.data.path.append(os.path.join(os.getcwd(), 'nltk_data'))
+# nltk.data.path.append(os.path.join(os.getcwd(), 'nltk_data'))
 
 # Load pre-trained models and pipelines
 with open('scaling_pipeline.pkl', 'rb') as f:
@@ -32,10 +32,12 @@ nlp = spacy.load('en_core_web_sm')
 # except LookupError:
 #     nltk.download('punkt_tab')
 
-try:
-    nltk.data.find('corpora/stopwords')
-except LookupError:
-    nltk.download('stopwords')
+# try:
+#     nltk.data.find('corpora/stopwords')
+# except LookupError:
+#     nltk.download('stopwords')
+
+nltk.download('stopwords')
 
 stop_words = set(nltk.corpus.stopwords.words('english'))
 
